@@ -1,3 +1,5 @@
-{{my-gauge}}
+{{dynamic-high-charts content=chartData chartOptions=chartOptions}}
 
+<button {{action "updateData"}}>Change Value</button>
+<button {{action "clearData"}}>Clear Value</button>
 {{outlet}}

@@ -9,7 +9,7 @@ export default Service.extend({
   },
 
   updateSeriesData(chartData, rangeStart, rangeEnd) {
-    // debugger;
+    debugger;
     let numPoints = this.getRandomInt(rangeStart, rangeEnd);
     return chartData.map((series) => {
       // debugger;

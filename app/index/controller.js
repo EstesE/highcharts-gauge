@@ -1,8 +1,8 @@
-import Component from '@ember/component';
+import { set } from '@ember/object';
+import Controller from '@ember/controller';
 import { inject } from '@ember/service';
-import { get, set } from '@ember/object';
 
-export default Component.extend({
+export default Controller.extend({
   dynamicChart: inject('dynamic-chart'),
 
   chartOptions: {
@@ -72,19 +72,27 @@ export default Component.extend({
     }
   ],
 
+  init() {
+    let controller = this;
+
+    // Update value every five seconds.
+    setInterval(function() {
+      let randomNum = parseInt(Math.random() * 201);
+      let data = [{data: [randomNum], name: 'Speed'}];
+      set(controller, 'chartData', data);
+    }, 5000);
+  },
+
   actions: {
     updateData() {
-      debugger;
-      let data = get(this.chartData[0], 'data'); //[80];
-      let newChartData = this.get('dynamicChart').updateSeriesData(data, 0, 200);
-      set(this.chartData[0], 'data', [newChartData[0][0]]);
+      let randomNum = parseInt(Math.random() * 201);
+      let data = [{data: [randomNum], name: 'Speed'}];
+      set(this, 'chartData', data);
     },
 
-    setData(num) {
-      debugger;
-      let data = [0];
-      set(this.chartData[0], 'data', data);
+    clearData(num) {
+      let data = [{data: [0], name: 'Speed'}];
+      set(this, 'chartData', data);
     }
   }
-
 });
