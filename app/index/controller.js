@@ -9,7 +9,16 @@ export default Controller.extend({
     chart: {
       type: 'solidgauge'
     },
-    title: null,
+    title: {
+      text: 'Some Title',
+      style: {
+        color: '#009dff',
+        fontWeight: 'bold'
+      }
+    },
+    subtitle: {
+      text: 'Hmm'
+    },
     pane: {
       center: ['50%', '85%'],
       size: '140%',
@@ -66,6 +75,11 @@ export default Controller.extend({
     {
       name: 'Speed',
       data: [60],
+      dataLabels: {
+        format: '<div style="text-align:center;"><span style="font-size:25px;color:' +
+          ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+          '<span style="font-size:12px;color:silver">km/h</span></div>'
+      },
       tooltip: {
         valueSuffix: 'mph'
       }
@@ -76,9 +90,9 @@ export default Controller.extend({
     let controller = this;
 
     // Update value every five seconds.
-    setInterval(function() {
+    setInterval(function () {
       let randomNum = parseInt(Math.random() * 201);
-      let data = [{data: [randomNum], name: 'Speed'}];
+      let data = [{ data: [randomNum], name: 'Speed' }];
       set(controller, 'chartData', data);
     }, 5000);
   },
@@ -86,12 +100,12 @@ export default Controller.extend({
   actions: {
     updateData() {
       let randomNum = parseInt(Math.random() * 201);
-      let data = [{data: [randomNum], name: 'Speed'}];
+      let data = [{ data: [randomNum], name: 'Speed' }];
       set(this, 'chartData', data);
     },
 
     clearData(num) {
-      let data = [{data: [0], name: 'Speed'}];
+      let data = [{ data: [0], name: 'Speed' }];
       set(this, 'chartData', data);
     }
   }

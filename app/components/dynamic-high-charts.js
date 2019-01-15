@@ -20,15 +20,18 @@ export default EmberHighChartsComponent.extend({
   // }),
 
   didUpdateAttrs() {
-    console.log(`Did update attrs`);
+    // console.log(`Did update attrs`);
     var chart = this.get('chart');
     if (chart) {
+      // console.log(chart);
+      chart.setTitle({ text: `Updated title to ${this.content[0].data[0]}`});       // title
+      chart.setTitle(null, { text: `New sub title ${this.content[0].data[0]}`}); // subTitle
       chart.redraw();
     }
   },
 
   didRender() {
-    console.log(`Did render`);
+    // console.log(`Did render`);
   },
 
   init() {
