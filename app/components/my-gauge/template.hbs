@@ -1,0 +1,6 @@
+<button class="btn btn-default" type="button" {{action "updateData"}}>Update Data</button>
+<button class="btn btn-default" type="button" {{action "setData" 0}}>Zero Data</button>
+
+{{high-charts chartOptions=chartOptions content=chartData}}
+
+{{yield}}

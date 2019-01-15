@@ -2,9 +2,20 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    emberHighCharts: {
+      includeHighCharts: false,
+      includeHighStock: true,
+      includeHighMaps: false,
+      includeHighChartsMore: true,
+      includeHighCharts3D: true,
+      includeModules: ['solid-gauge']
+      /* available modules:
+        boost, broken-axis, canvas-tools, data, drilldown, exporting, funnel,
+        heatmap, map, no-data-to-display, offline-exporting, solid-gauge, treemap
+      */
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
