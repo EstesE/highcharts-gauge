@@ -1,7 +1,6 @@
 # highcharts-gauge
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Example of the Highcharts gauge and dynamically updating it.
 
 ## Prerequisites
 
@@ -9,6 +8,7 @@ You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
+* [Yarn](https://yarnpkg.com/en/) (optional)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
@@ -16,7 +16,7 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd highcharts-gauge`
-* `npm install`
+* `yarn install` or `npm install`
 
 ## Running / Development
 
