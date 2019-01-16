@@ -11,6 +11,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:ember/recommended'
   ],
+  globals: {
+    "Highcharts": true
+  },
   env: {
     browser: true
   },

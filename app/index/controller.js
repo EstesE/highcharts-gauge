@@ -1,10 +1,7 @@
 import { set } from '@ember/object';
 import Controller from '@ember/controller';
-import { inject } from '@ember/service';
 
 export default Controller.extend({
-  dynamicChart: inject('dynamic-chart'),
-
   chartOptions: null,
   chartData: null,
 
